@@ -31,8 +31,8 @@ public class PathService {
         );
     }
 
-    public void validateConnected(final Long sourceId, final Long targetId) {
-        shortestPathOf(sourceId, targetId);
+    public void validateConnected(final Station source, final Station target) {
+        shortestPathOf(source.getId(), target.getId());
     }
 
     private SubwayShortestPath shortestPathOf(final Long sourceId, final Long targetId) {

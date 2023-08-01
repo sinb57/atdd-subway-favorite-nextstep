@@ -31,7 +31,7 @@ public class FavoriteService {
         final var sourceStation = stationRepository.getById(request.getSourceId());
         final var targetStation = stationRepository.getById(request.getTargetId());
 
-        pathService.validateConnected(request.getSourceId(), request.getTargetId());
+        pathService.validateConnected(sourceStation, targetStation);
 
         final var favorite = favoriteRepository.save(new Favorite(member, sourceStation, targetStation));
         return FavoriteResponse.toResponse(favorite);

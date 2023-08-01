@@ -72,7 +72,7 @@ class FavoriteServiceMockTest {
             given(stationRepository.getById(source.getId())).willReturn(source);
             given(stationRepository.getById(target.getId())).willReturn(target);
 
-            doNothing().when(pathService).validateConnected(sourceId, targetId);
+            doNothing().when(pathService).validateConnected(any(), any());
             when(favoriteRepository.save(any())).thenReturn(favorite);
 
             // when
@@ -125,7 +125,7 @@ class FavoriteServiceMockTest {
                 given(stationRepository.getById(sourceId)).willReturn(StationFixture.역삼역);
                 given(stationRepository.getById(targetId)).willReturn(StationFixture.선릉역);
 
-                doThrow(SubwayException.class).when(pathService).validateConnected(sourceId, targetId);
+                doThrow(SubwayException.class).when(pathService).validateConnected(any(), any());
 
                 // when
                 assertThatThrownBy(() -> favoriteService.saveFavorite(email, request))

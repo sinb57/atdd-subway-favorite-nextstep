@@ -100,7 +100,7 @@ class FavoriteAcceptanceTest extends AcceptanceTest {
 
     @DisplayName("즐겨찾기를 조회한다")
     @Nested
-    class showLines {
+    class showFavorites {
 
         @Test
         void success() {
@@ -127,7 +127,7 @@ class FavoriteAcceptanceTest extends AcceptanceTest {
 
     @DisplayName("즐겨찾기 삭제에 성공한다")
     @Nested
-    class deleteLine {
+    class deleteFavorites {
 
         @Test
         void success() {
